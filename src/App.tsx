@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.css';
-import { useAppSelector } from './hooks/redux';
+import { userSlice } from './store/reducers/UserSlice';
+import { useAppDispatch, useAppSelector } from './hooks/redux';
 
 function App() {
-  const {} = useAppSelector(state => state)
+  const { increment } = userSlice.actions
+  const dispatch = useAppDispatch()
+  const { count } = useAppSelector(state => state.userReducer)
 
   return (
     <div className="App">
-      IT
+      <h1>{count}</h1>
+      <button onClick={() => dispatch(increment(1))}>Click me</button>
     </div>
   );
 }
