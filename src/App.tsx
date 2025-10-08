@@ -4,9 +4,9 @@ import { userSlice } from './store/reducers/UserSlice';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 
 function App() {
-  const { increment } = userSlice.actions
   const dispatch = useAppDispatch()
   const { count } = useAppSelector(state => state.userReducer)
+  const { increment } = userSlice.actions
 
   return (
     <div className="App">
