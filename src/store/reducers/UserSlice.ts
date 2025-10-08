@@ -32,7 +32,7 @@ export const userSlice = createSlice({
             state.error = ''
             state.users = action.payload
         },
-
+        
         usersFetchingError(state, action: PayloadAction<string>) {
             state.isLoading = false
             state.error = action.payload
