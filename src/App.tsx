@@ -13,22 +13,14 @@ function App() {
     dispatch(fetchUsers())
   }, [])
 
-  if (isLoading) {
-    return <h1>Loading...</h1>
-  }
-
-  if (error) {
-    return <h1>{error}</h1>
-  }
-
   return (
     <div className="App">
       <h1>{count}</h1>
       <button onClick={() => dispatch(increment(1))}>Click me</button>
       <hr />
-      {users.map(user => (
-        <div>{user.name}</div>
-      ))}
+      {isLoading && <h1>Loading...</h1>}
+      {error && <h1>{error}</h1>}
+      {JSON.stringify(users, null, 2)}
     </div>
   );
 }
