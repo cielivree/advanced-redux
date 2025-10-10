@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-// import './App.css';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { userSlice } from './store/reducers/UserSlice';
-import { fetchUsers } from './store/reducers/ActionCreators';
+import { fetchUsersAll } from './store/reducers/ActionCreators';
 
 function App() {
   const dispatch = useAppDispatch()
@@ -10,13 +9,13 @@ function App() {
   const { increment } = userSlice.actions
 
   useEffect(() => {
-    dispatch(fetchUsers())
-  }, [])
+    dispatch(fetchUsersAll())
+  }, []) 
 
   return (
     <div className="App">
       <h1>{count}</h1>
-      <button onClick={() => dispatch(increment(1))}>Click me</button>
+      <button onClick={() =>  dispatch(increment(1))}>Click me</button>
       <hr />
       {isLoading && <h1>Loading...</h1>}
       {error && <h1>{error}</h1>}
