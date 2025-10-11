@@ -51,10 +51,10 @@ export const userSlice = createSlice({
             .addCase(fetchUsersAll.pending, (state) => {
             state.isLoading = true
             })
-           /* .addCase(fetchUsersAll.rejected, (state, action: PayloadAction<string>) => {
+           .addCase(fetchUsersAll.rejected, (state, action: PayloadAction<any>) => {
             state.isLoading = false
             state.error = action.payload
-            }) */
+            })
     }
 })
 
