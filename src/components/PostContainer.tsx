@@ -1,5 +1,6 @@
 import React from 'react'
 import { postAPI } from '../services/PostService'
+import PostItem from './PostItem'
 
 const PostContainer = () => {
   const {data: posts} = postAPI.useFetchAllPostsQuery(5)
@@ -8,7 +9,7 @@ const PostContainer = () => {
     <div>
       <div className="post_list">
         {posts?.map(post => 
-          <PostItem/>
+          <PostItem post={post} />
           )}
       </div>
     </div>
