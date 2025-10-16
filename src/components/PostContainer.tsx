@@ -7,7 +7,7 @@ const PostContainer = () => {
   
   return (
     <div>
-      <div className="post_list">
+      <div className="post__list">
         {posts?.map(post => 
           <PostItem post={post} />
           )}

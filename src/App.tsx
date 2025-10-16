@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { userSlice } from './store/reducers/UserSlice';
 import { fetchUsersAll } from './store/reducers/ActionCreators';
+import PostContainer from './components/PostContainer';
+import './App.css'
 
 function App() {
 const dispatch = useAppDispatch()
@@ -20,6 +22,7 @@ const { increment } = userSlice.actions
       {/*isLoading && <h1>Loading...</h1>*/}
       {/*error && <h1>{error}</h1>*/}
       {/*JSON.stringify(users, null, 2)*/}
+      <PostContainer/>
     </div>
   );
 }

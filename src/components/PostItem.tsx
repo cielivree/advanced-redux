@@ -8,8 +8,9 @@ interface PostItemProps {
 const PostItem: React.FC<PostItemProps> = ({ post }) => {
   return (
       <div className='post'>
-          {post.id}. {post.title}
-    </div>
+        {post.id}. {post.title}
+        <button>Delete</button>
+      </div>
   )
 }
 
