@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { postAPI } from '../services/PostService'
 import PostItem from './PostItem'
 
-const PostContainer = () => {
-  const [limit, setLimit] = useState(10)
-  const { data: posts, error, isLoading } = postAPI.useFetchAllPostsQuery(limit)
-
+const PostContainer2 = () => {
+  const {data: posts, error, isLoading} = postAPI.useFetchAllPostsQuery(10)
+  
   return (
     <div>
       <div className="post__list">
@@ -19,4 +18,4 @@ const PostContainer = () => {
   )
 }
 
-export default PostContainer
+export default PostContainer2
