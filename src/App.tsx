@@ -23,6 +23,9 @@ const { increment } = userSlice.actions
       {/*isLoading && <h1>Loading...</h1>*/}
       {/*error && <h1>{error}</h1>*/}
       {/*JSON.stringify(users, null, 2)*/}
+      <div style={{display: 'flex', width: '100%', justifyContent: 'space-evenly'}}>
+          <button>Add new post</button>
+      </div>
       <div style={{ display: "flex" }}>
         <PostContainer/>
         <PostContainer2/>
