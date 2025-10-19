@@ -5,15 +5,23 @@ import { fetchUsersAll } from './store/reducers/ActionCreators';
 import PostContainer from './components/PostContainer';
 import './App.css'
 import PostContainer2 from './components/PostContainer2';
+import { postAPI } from './services/PostService';
+import { IPost } from './models/IPost';
 
 function App() {
-const dispatch = useAppDispatch()
-const { count, users, isLoading, error } = useAppSelector(state => state.userReducer)
-const { increment } = userSlice.actions
+  const dispatch = useAppDispatch()
+  const { count, users, isLoading, error } = useAppSelector(state => state.userReducer)
+  const { increment } = userSlice.actions
+  const [createPost, {}] = postAPI.useCreatePostMutation()
 
 //  useEffect(() => {
 //    dispatch(fetchUsersAll())
 //  }, []) 
+
+  const handleCreate = async () => {
+    const title = prompt()
+    await createPost({title, body: title} as IPost)
+  }
  
   return (
     <div className="App">
@@ -24,7 +32,7 @@ const { increment } = userSlice.actions
       {/*error && <h1>{error}</h1>*/}
       {/*JSON.stringify(users, null, 2)*/}
       <div style={{display: 'flex', width: '100%', justifyContent: 'space-evenly'}}>
-          <button>Add new post</button>
+          <button onClick={handleCreate}>Add new post</button>
       </div>
       <div style={{ display: "flex" }}>
         <PostContainer/>
