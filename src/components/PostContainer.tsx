@@ -3,16 +3,17 @@ import { postAPI } from '../services/PostService'
 import PostItem from './PostItem'
 
 const PostContainer = () => {
-  const [limit, setLimit] = useState(10)
-  const { data: posts, error, isLoading, refetch } = postAPI.useFetchAllPostsQuery(limit, {
-    pollingInterval: 10000      // getting renewed data in interval
-  })
+  const [limit, setLimit] = useState(100)
+  const { data: posts, error, isLoading, refetch } = postAPI.useFetchAllPostsQuery(limit)
+//  {
+//    pollingInterval: 10000      // getting renewed data in interval
+//  })
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLimit(5)
-    }, 5000)
-  }, [])
+//  useEffect(() => {
+//    setTimeout(() => {
+//      setLimit(5)
+//    }, 5000)
+// }, [])
 
   return (
     <div>
