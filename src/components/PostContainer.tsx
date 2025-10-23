@@ -15,6 +15,8 @@ const PostContainer = () => {
 //    }, 5000)
 // }, [])
 
+  
+
   return (
     <div>
       <div className="post__list">

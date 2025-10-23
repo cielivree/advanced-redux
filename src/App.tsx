@@ -12,7 +12,7 @@ function App() {
   const dispatch = useAppDispatch()
   const { count, users, isLoading, error } = useAppSelector(state => state.userReducer)
   const { increment } = userSlice.actions
-  const [createPost, {}] = postAPI.useCreatePostMutation()
+  const [createPost, { error: createError, isLoading: isCreateLoading }] = postAPI.useCreatePostMutation()
 
 //  useEffect(() => {
 //    dispatch(fetchUsersAll())
