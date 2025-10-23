@@ -13,7 +13,7 @@ const PostItem: React.FC<PostItemProps> = ({ post, remove, update }) => {
     remove(post)
   }
 
-  const handleUpdate = (event: React.MouseEvent) => {
+  const handleUpdate = () => {
     const title = prompt() || ""
     update({ ...post, title })
   }
